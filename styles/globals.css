@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html,
 body {
   padding: 0;
@@ -16,11 +19,21 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
+/*  html {
     color-scheme: dark;
   }
   body {
     color: white;
     background: black;
   }
+*/
+}
+main {
+  width: 1536px;
+  height: 512px; 
+}
+
+.merke {
+  width: 384px;
+  height: 128px;
 }
