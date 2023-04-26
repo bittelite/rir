@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 import { useQuery } from '@apollo/client';
-import client from '../../constants/client';
+import client from '../../constants/client'; 
 
 const GET_POSTS = gql`
     query GetPosts {

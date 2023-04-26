@@ -11,7 +11,7 @@ function LoginPage() {
     event.preventDefault();
     try {
       const { data } = await login({ variables: { username, password } });
-      localStorage.setItem('token', data.login.token);
+      localStorage.setItem('token', data.login.token); 
       window.location.href = '/';
     } catch (error) {
       console.error(error);

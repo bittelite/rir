@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 import { setContext } from '@apollo/link-context';
 
 const httpLink = new HttpLink({
-  uri: 'https://skjermkontroll.no/graphql',
+  uri: 'https://skjermkontroll.no/graphql', 
 });
 
 const authLink = setContext((_, { headers }) => {

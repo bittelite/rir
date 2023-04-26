@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import { useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client'; 
 
 const CREATE_POST = gql`
   mutation CreatePost($input: CreatePostInput!) {
