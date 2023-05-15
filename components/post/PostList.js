@@ -1,25 +1,13 @@
 import { gql } from '@apollo/client';
 import { useQuery } from '@apollo/client';
-import client from '../../constants/client'; 
+import client from '../../constants/client';
 
 const GET_POSTS = gql`
     query GetPosts {
-    rirSkjermer (first:16) {
+    posts (first:16) {
       nodes {
         id
-        title
-        objekt {
-          innhold {
-            ... on Avfallsmerke {
-              avfallsmerke {
-                tekst
-                ikon {
-                  mediaItemUrl
-                }
-              }
-            }
-          }
-        }
+        content
       }
     }
   }
@@ -36,15 +24,9 @@ export function PostList() {
 
   return (
     <>
-      {data.rirSkjermer.nodes.map((post) => (
+      {data.posts.nodes.map((post) => (
         <>
-        <div className='merke grid grid-cols-3 gap-0 items-center'>
-            <img src={post.objekt.innhold.avfallsmerke.ikon.mediaItemUrl} width={128} height={128} className='col-span-1'/>
-            <div className='text-3xl text-left col-span-2 px-4'>
-            <span className='text-sm'>{post.title}</span><br />
-                {post.objekt.innhold.avfallsmerke.tekst}
-            </div>
-        </div>
+        <div className='merke grid grid-cols-3 gap-0 items-center text-3xl ' key={post.id} dangerouslySetInnerHTML={{ __html: post.content }}/>
         </>
       ))}
     </>

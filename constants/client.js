@@ -2,15 +2,17 @@ import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 import { setContext } from '@apollo/link-context';
 
 const httpLink = new HttpLink({
-  uri: 'https://skjermkontroll.no/graphql', 
+  uri: 'https://skjermkontroll.no/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = process.env.GRAPHQL_JWT_AUTH_SECRET_KEY;
+  const token = localStorage.getItem('token') || process.env.GRAPHQL_JWT_AUTH_SECRET_KEY;
+  const authHeader = token ? `Bearer ${token}` : '';
+  const defaultHeader = headers;
   return {
     headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      ...defaultHeader,
+      authorization: authHeader,
     },
   };
 });

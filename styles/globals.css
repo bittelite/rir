@@ -5,13 +5,14 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Inter, sans-serif;
+  background-color: #bfe0c4;
+  color: #001c26;
 }
 
 a {
   color: inherit;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 * {
@@ -28,12 +29,15 @@ a {
   }
 */
 }
-main {
+.skjermVisning {
   width: 1536px;
-  height: 512px; 
+  height: 512px;
 }
 
 .merke {
   width: 384px;
   height: 128px;
+}
+.blue {
+  background-color: blue;
 }

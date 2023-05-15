@@ -14,6 +14,7 @@ const CREATE_POST = gql`
 `;
 
 export function CreatePost() {
+  //const token = localStorage.getItem('token');
   const [createPost] = useMutation(CREATE_POST);
 
   const handleSubmit = async (event) => {
