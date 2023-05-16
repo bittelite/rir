@@ -61,13 +61,13 @@ export function EditPost() {
     <ul className=' w-80'>
       {data.posts.nodes.map((post) => (
         <li className='grid grid-cols-12 p-1' key={post.id}>
-          <h3>{post.title}</h3>
+          <h3 className='text-center font-bold'>{post.title}</h3>
           <form className='col-span-10' onSubmit={(e) => {
             e.preventDefault();
             handleUpdatePost(post.id, e.target.avfallsmerker.value);
           }}>
-            <select className='mx-1' name="avfallsmerker">
-              <option value="" disabled selected>Velg avfallstype</option>
+            <select className='mx-1 p-1 rounded-md border-2 border-sky-950 hover:border-teal-600 focus:outline-none focus:ring' name="avfallsmerker">
+              <option value="" defaultValue>Velg avfallstype</option>
               {dataAvfallsmerker.posts.nodes.map(({ id, title, content }) => (
                 <option key={id} value={content}>{title}</option>
               ))}
@@ -76,7 +76,7 @@ export function EditPost() {
               className='p-1 text-white rounded-md bg-sky-950 hover:bg-teal-800 active:bg-teal-700 focus:outline-none focus:ring focus:bg-teal-700'
               type="submit"
             >
-              UP
+              <img src='/update.png' width='20px' height='20px' />
             </button>
           </form>
         </li>

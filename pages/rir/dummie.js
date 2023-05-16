@@ -35,7 +35,8 @@ export default function Home( skjerm1 ) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='skjermVisning'>
-      <div className='grid grid-rows-4 grid-cols-4 grid-flow-row gap-0 bg-black text-white'>
+      <div className='hidden text-left col-span-2 px-4'>Style import</div>
+      <div className='grid grid-rows-4 grid-cols-4 grid-flow-row gap-0 bg-black text-white font-extrabold'>
         {skjerm1.skjerm1.map(post => (
           <div
             key={post.id}
