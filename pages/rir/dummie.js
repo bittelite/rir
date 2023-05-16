@@ -2,7 +2,6 @@
 import Head from 'next/head'
 import { useEffect } from 'react'
 
-
 export const getStaticProps = async () => {
   const skjermerWP = await fetch('https://skjermkontroll.no/wp-json/wp/v2/posts?categories=3&per_page=20');
   const skjermerData = await skjermerWP.json();
@@ -16,7 +15,6 @@ export const getStaticProps = async () => {
 }
 
 export default function Home( skjerm1 ) {
-    console.log(skjerm1);
   useEffect(() => {
     const interval = setInterval(() => {
       if (navigator.onLine) {

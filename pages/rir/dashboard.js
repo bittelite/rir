@@ -17,8 +17,8 @@ export default function Dashboard() {
             <h2>Legg til ny post</h2>
             <CreatePost />
         </div>
-        <div className=''>
-            <h2>Velg innhold</h2>
+        <div>
+            <h2 className='pb-4 text-2xl font-semibold text-center'>Skjermer</h2>
             <EditPost />
         </div>
       </Layout>

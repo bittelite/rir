@@ -1,7 +1,5 @@
 import Head from 'next/head'
-import { CreatePost } from '../../components/post/CreatePost'
 import { PostList } from '../../components/post/PostList'
-import { PostController } from '../../components/post/PostController'
 import { useEffect } from 'react'
 
 export default function Home() {
