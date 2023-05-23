@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { useEffect } from 'react'
 
 export const getStaticProps = async () => {
-  const skjermerWP = await fetch('https://skjermkontroll.no/wp-json/wp/v2/posts?categories=3&per_page=20');
+  const skjermerWP = await fetch('https://skjermkontroll.no/wp-json/wp/v2/posts?categories=3&per_page=20&filer[orderby]=date&order=asc');
   const skjermerData = await skjermerWP.json();
 
   return {
