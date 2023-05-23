@@ -14,10 +14,6 @@ export function SignIn() {
     try {
       const { data } = await login({ variables: { username, password } });
       localStorage.setItem('token', data.login.authToken);
-      const clearLocalStorage = () => {
-        localStorage.removeItem('token');
-      };
-      setTimeout(clearLocalStorage, 300000);
       router.push('rir/dashboard');
     } catch (error) {
       console.error(error);
