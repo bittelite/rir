@@ -2,6 +2,7 @@ import { Layout } from '../components/layout/Layout';
 import { SignIn } from '../components/login/SignIn';
 import { SignOut } from '../components/login/SignOut';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 function LoginPage() {
   const [token, setToken] = useState(null);
@@ -36,7 +37,14 @@ function LoginPage() {
   return (
     <Layout>
       {token ? (
-        <SignOut onSignOut={handleSignOut} />
+        <>
+          <Link href="rir/dashboard">
+            <span className='block my-4 font-bold underline'>
+              Gå til dashboard
+            </span>
+          </Link>
+          <SignOut onSignOut={handleSignOut} />
+        </>
       ) : (
         <SignIn onSignIn={handleSignIn} />
       )}

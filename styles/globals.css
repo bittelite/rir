@@ -41,3 +41,15 @@ a {
 .blue {
   background-color: blue;
 }
+.dashMerke {
+  @apply hidden lg:grid lg:grid-cols-5 lg:rounded-md lg:w-full bg-black text-white items-center mb-2 mt-4 font-bold text-xl;
+}
+.dashMerke div:first-child {
+  @apply col-span-1;
+}
+.dashMerke div {
+  @apply col-span-3;
+}
+.dashMerke img:first-child {
+  @apply w-full rounded-l-md;
+}

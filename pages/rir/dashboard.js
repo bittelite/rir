@@ -18,7 +18,9 @@ export default function Dashboard() {
             <CreatePost />
         </div>
         <div>
-            <h2 className='pb-4 text-2xl font-semibold text-center'>Skjermer</h2>
+            <h2 className='pb-4 text-2xl font-semibold text-center lg:hidden'>
+              Skjermer
+            </h2>
             <EditPost />
         </div>
       </Layout>
